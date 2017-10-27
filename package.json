@@ -1,5 +1,5 @@
 {
-  "name": "(#plugin_slug#)",
+  "name": "modularity-tiles",
   "version": "1.0.0",
   "description": "(#plugin_description#)",
   "main": "",
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/Svanmark/Wordpress-Plugin-Boilerplate.git"
   },
-  "author": "(#plugin_author#)",
+  "author": "Nikolas Ramstedt",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Svanmark/Wordpress-Plugin-Boilerplate/issues"
