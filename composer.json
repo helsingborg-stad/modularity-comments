@@ -10,7 +10,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "helsingborg-stad/modularity-tiles": ">=1.0.0"
+        "helsingborg-stad/modularity-tiles": ">=0.0.1"
     },
     "repositories": [
         {
