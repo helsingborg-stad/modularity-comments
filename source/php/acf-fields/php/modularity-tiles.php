@@ -2,11 +2,11 @@
 
 if (function_exists('acf_add_local_field_group')) {
     acf_add_local_field_group(array(
-    'key' => 'group_569ceab2c16ee',
+    'key' => 'group_59fb39abc52fd',
     'title' => __('Tiles', 'modularity-testimonials'),
     'fields' => array(
         0 => array(
-            'key' => 'field_569ceabc2cfc8',
+            'key' => 'field_59fb3a9de92c5',
             'label' => __('Tiles', 'modularity-testimonials'),
             'name' => 'modularity-tiles',
             'type' => 'repeater',
@@ -26,7 +26,7 @@
             'button_label' => __('Lägg till rad', 'modularity-testimonials'),
             'sub_fields' => array(
                 0 => array(
-                    'key' => 'field_5743f66719b62',
+                    'key' => 'field_59fb3aa57c2d8',
                     'label' => __('Tile type', 'modularity-testimonials'),
                     'name' => 'link_type',
                     'type' => 'radio',
@@ -52,7 +52,7 @@
                     'return_format' => 'value',
                 ),
                 1 => array(
-                    'key' => 'field_59f1929c9c179',
+                    'key' => 'field_59fb3ab6de08a',
                     'label' => __('Tile size', 'modularity-testimonials'),
                     'name' => 'tile_size',
                     'type' => 'radio',
@@ -78,7 +78,7 @@
                     'return_format' => 'value',
                 ),
                 2 => array(
-                    'key' => 'field_569cf1252cfc9',
+                    'key' => 'field_59fb3abc842b6',
                     'label' => __('Page', 'modularity-testimonials'),
                     'name' => 'page',
                     'type' => 'post_object',
@@ -88,7 +88,7 @@
                     'conditional_logic' => array(
                         0 => array(
                             0 => array(
-                                'field' => 'field_5743f66719b62',
+                                'field' => 'field_59fb3ac2356f6',
                                 'operator' => '==',
                                 'value' => 'internal',
                             ),
@@ -119,7 +119,7 @@
                     'conditional_logic' => array(
                         0 => array(
                             0 => array(
-                                'field' => 'field_5743f66719b62',
+                                'field' => 'field_59fb3ac8010bc',
                                 'operator' => '==',
                                 'value' => 'external',
                             ),
@@ -144,7 +144,7 @@
                     'conditional_logic' => array(
                         0 => array(
                             0 => array(
-                                'field' => 'field_5743f66719b62',
+                                'field' => 'field_59fb3ace88b72',
                                 'operator' => '==',
                                 'value' => 'image',
                             ),
@@ -167,7 +167,7 @@
                     'mime_types' => '',
                 ),
                 5 => array(
-                    'key' => 'field_56c5e0edc81bb',
+                    'key' => 'field_59fb3ad5b322d',
                     'label' => __('Titel', 'modularity-testimonials'),
                     'name' => 'title',
                     'type' => 'text',
@@ -177,7 +177,7 @@
                     'conditional_logic' => array(
                         0 => array(
                             0 => array(
-                                'field' => 'field_5743f66719b62',
+                                'field' => 'field_59fb3ade2cf3a',
                                 'operator' => '==',
                                 'value' => 'internal',
                             ),
@@ -197,7 +197,7 @@
                     'disabled' => 0,
                 ),
                 6 => array(
-                    'key' => 'field_5743f6da19b64',
+                    'key' => 'field_59fb3ae3bce63',
                     'label' => __('Titel', 'modularity-testimonials'),
                     'name' => 'title',
                     'type' => 'text',
@@ -207,7 +207,7 @@
                     'conditional_logic' => array(
                         0 => array(
                             0 => array(
-                                'field' => 'field_5743f66719b62',
+                                'field' => 'field_59fb3ae959cff',
                                 'operator' => '==',
                                 'value' => 'external',
                             ),
@@ -227,7 +227,7 @@
                     'disabled' => 0,
                 ),
                 7 => array(
-                    'key' => 'field_56c5e12ac81bc',
+                    'key' => 'field_59fb3aef3d875',
                     'label' => __('Lead', 'modularity-testimonials'),
                     'name' => 'lead',
                     'type' => 'textarea',
@@ -237,24 +237,24 @@
                     'conditional_logic' => array(
                         0 => array(
                             0 => array(
-                                'field' => 'field_5743f66719b62',
+                                'field' => 'field_59fb3af5113ed',
                                 'operator' => '==',
                                 'value' => 'internal',
                             ),
                             1 => array(
-                                'field' => 'field_59f1929c9c179',
+                                'field' => 'field_59fb3afb7036a',
                                 'operator' => '!=',
                                 'value' => 'square',
                             ),
                         ),
                         1 => array(
                             0 => array(
-                                'field' => 'field_5743f66719b62',
+                                'field' => 'field_59fb3afee6ae6',
                                 'operator' => '==',
                                 'value' => 'external',
                             ),
                             1 => array(
-                                'field' => 'field_59f1929c9c179',
+                                'field' => 'field_59fb3b03121ee',
                                 'operator' => '!=',
                                 'value' => 'square',
                             ),
