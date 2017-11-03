@@ -1,15 +1,14 @@
 [{
-    "key": "group_59fb39abc52fd",
+    "key": "group_59fc24ec4bb83",
     "title": "Tiles",
     "fields": [
         {
-            "key": "field_59fb3a9de92c5",
+            "key": "field_59fc24f6d3914",
             "label": "Tiles",
             "name": "modularity-tiles",
             "type": "repeater",
-            "value": null,
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -20,16 +19,15 @@
             "min": 1,
             "max": 0,
             "layout": "block",
-            "button_label": "L\u00e4gg till rad",
+            "button_label": "",
             "sub_fields": [
                 {
-                    "key": "field_59fb3aa57c2d8",
+                    "key": "field_59fc255bd3915",
                     "label": "Tile type",
                     "name": "link_type",
                     "type": "radio",
-                    "value": null,
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -49,13 +47,12 @@
                     "return_format": "value"
                 },
                 {
-                    "key": "field_59fb3ab6de08a",
+                    "key": "field_59fc2587d3917",
                     "label": "Tile size",
                     "name": "tile_size",
                     "type": "radio",
-                    "value": null,
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -75,17 +72,16 @@
                     "return_format": "value"
                 },
                 {
-                    "key": "field_59fb3abc842b6",
+                    "key": "field_59fc2599d3918",
                     "label": "Page",
                     "name": "page",
                     "type": "post_object",
-                    "value": null,
                     "instructions": "",
                     "required": 1,
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_59fb3ac2356f6",
+                                "field": "field_59fc255bd3915",
                                 "operator": "==",
                                 "value": "internal"
                             }
@@ -104,17 +100,16 @@
                     "ui": 1
                 },
                 {
-                    "key": "field_5743f6be19b63",
+                    "key": "field_59fc25b2d3919",
                     "label": "Link url",
                     "name": "link_url",
                     "type": "url",
-                    "value": null,
                     "instructions": "",
                     "required": 1,
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_59fb3ac8010bc",
+                                "field": "field_59fc255bd3915",
                                 "operator": "==",
                                 "value": "external"
                             }
@@ -129,17 +124,16 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_569e08cfb642a",
+                    "key": "field_59fc25d6d391a",
                     "label": "Upload image",
                     "name": "custom_image",
                     "type": "image",
-                    "value": null,
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_59fb3ace88b72",
+                                "field": "field_59fc255bd3915",
                                 "operator": "==",
                                 "value": "image"
                             }
@@ -162,17 +156,16 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_59fb3ad5b322d",
-                    "label": "Titel",
+                    "key": "field_59fc25fbd391b",
+                    "label": "Title",
                     "name": "title",
                     "type": "text",
-                    "value": null,
                     "instructions": "Om du inte vill anv\u00e4nda den underliggande sidans titel kan du skriva in en annan titel h\u00e4r.",
                     "required": 0,
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_59fb3ade2cf3a",
+                                "field": "field_59fc255bd3915",
                                 "operator": "==",
                                 "value": "internal"
                             }
@@ -184,25 +177,22 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "readonly": 0,
-                    "disabled": 0
+                    "maxlength": ""
                 },
                 {
-                    "key": "field_59fb3ae3bce63",
-                    "label": "Titel",
+                    "key": "field_59fc261dd391c",
+                    "label": "Title",
                     "name": "title",
                     "type": "text",
-                    "value": null,
-                    "instructions": "",
+                    "instructions": "Om du inte vill anv\u00e4nda den underliggande sidans titel kan du skriva in en annan titel h\u00e4r.",
                     "required": 1,
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_59fb3ae959cff",
+                                "field": "field_59fc255bd3915",
                                 "operator": "==",
                                 "value": "external"
                             }
@@ -214,42 +204,39 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "readonly": 0,
-                    "disabled": 0
+                    "maxlength": ""
                 },
                 {
-                    "key": "field_59fb3aef3d875",
+                    "key": "field_59fc2635d391d",
                     "label": "Lead",
                     "name": "lead",
                     "type": "textarea",
-                    "value": null,
                     "instructions": "Om du inte vill anv\u00e4nda den underliggande sidans ingress kan du skriva in en annan ingress h\u00e4r.",
                     "required": 0,
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_59fb3af5113ed",
+                                "field": "field_59fc255bd3915",
                                 "operator": "==",
                                 "value": "internal"
                             },
                             {
-                                "field": "field_59fb3afb7036a",
+                                "field": "field_59fc2587d3917",
                                 "operator": "!=",
                                 "value": "square"
                             }
                         ],
                         [
                             {
-                                "field": "field_59fb3afee6ae6",
+                                "field": "field_59fc255bd3915",
                                 "operator": "==",
                                 "value": "external"
                             },
                             {
-                                "field": "field_59fb3b03121ee",
+                                "field": "field_59fc2587d3917",
                                 "operator": "!=",
                                 "value": "square"
                             }

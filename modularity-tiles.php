@@ -44,7 +44,7 @@ add_action('plugins_loaded', function () {
     $acfExportManager->setTextdomain('modularity-testimonials');
     $acfExportManager->setExportFolder(MODULARITYTILES_PATH . 'source/php/acf-fields/');
     $acfExportManager->autoExport(array(
-        'modularity-tiles' => 'group_59fb39abc52fd'
+        'modularity-tiles' => 'group_59fc24ec4bb83'
     ));
     $acfExportManager->import();
 });
