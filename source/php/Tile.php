@@ -26,8 +26,18 @@ class Tile
             $this->setUrl($tile);
             $this->setContent($tile);
         } else {
-            $this->image = $tile['custom_image']['url'];
-            $this->tile[] = 'tile-img';
+
+            // Get resized Images
+            if ($tile['tile_size'] == 'horizontal') {
+                $this->image = $this->getResizedImageUrl($tile['custom_image'], array(854, 427));
+            } elseif ($tile['tile_size'] == 'vertical') {
+                $this->image = $this->getResizedImageUrl($tile['custom_image'], array(427, 854));
+            }
+
+            //Add class if ok!
+            if (is_null($this->image)) {
+                $this->tile[] = 'tile-img';
+            }
         }
 
         //Convert class arrays to string
@@ -77,5 +87,24 @@ class Tile
         } else {
             $this->title = $tile['title'];
         }
+    }
+
+    public function getResizedImageUrl($imageObject, $size = array(100, 100))
+    {
+        if (!isset($imageObject['id'])) {
+            return null;
+        }
+
+        if (isset($imageObject['id']) && !is_numeric($imageObject['id'])) {
+            return null;
+        }
+
+        if ($image = wp_get_attachment_image_src($imageObject['id'], $size)) {
+            if (is_array($image) && count($image) == 4) {
+                return $image[0];
+            }
+        }
+
+        return null;
     }
 }
