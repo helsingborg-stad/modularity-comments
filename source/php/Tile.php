@@ -26,24 +26,37 @@ class Tile
             $this->setUrl($tile);
             $this->setContent($tile);
         } else {
-
-            // Get resized Images
-            if ($tile['tile_size'] == 'horizontal') {
-                $this->image = $this->getResizedImageUrl($tile['custom_image'], array(854, 427));
-            } elseif ($tile['tile_size'] == 'vertical') {
-                $this->image = $this->getResizedImageUrl($tile['custom_image'], array(427, 854));
-            }
-
-            //Add class if ok!
-            if (is_null($this->image)) {
-                $this->tile[] = 'tile-img';
-            }
+            $this->setImage($tile);
         }
 
         //Convert class arrays to string
         $this->grid = implode(' ', $this->grid);
         $this->tile = implode(' ', $this->tile);
     }
+
+    /**
+     * Get image that shouild been used and append class
+     * @return void
+     */
+
+    public function setImage($tile)
+    {
+        if ($tile['tile_size'] == 'horizontal') {
+            $this->image = $this->getResizedImageUrl($tile['custom_image'], array(854, 427));
+        } elseif ($tile['tile_size'] == 'vertical') {
+            $this->image = $this->getResizedImageUrl($tile['custom_image'], array(427, 854));
+        }
+
+        if (is_null($this->image)) {
+            $this->tile[] = 'tile-img';
+        }
+    }
+
+    /**
+     * Set content sizes
+     * @return void
+     * @param $tile A tile object
+     */
 
     public function setContent($tile)
     {
@@ -53,6 +66,12 @@ class Tile
             $this->grid['xs'] = 'grid-xs-12';
         }
     }
+
+    /**
+     * Set tile size according to settings provided
+     * @return void
+     * @param $tile A tile object
+     */
 
     public function setSize($size)
     {
@@ -71,6 +90,12 @@ class Tile
         }
     }
 
+    /**
+     * Set url from textfield or linked item
+     * @return void
+     * @param $tile A tile object
+     */
+
     public function setUrl($tile)
     {
         if ($tile['link_type'] == 'internal') {
@@ -80,6 +105,12 @@ class Tile
         }
     }
 
+    /**
+     * Set the title of the tile, get title from link if not set.
+     * @return void
+     * @param $tile A tile object
+     */
+
     public function setTitle($tile)
     {
         if ($tile['link_type'] == 'internal' && !$tile['title']) {
@@ -88,6 +119,13 @@ class Tile
             $this->title = $tile['title'];
         }
     }
+
+    /**
+     * Resize image and return url of the resize
+     * @return string or null
+     * @param array $imageObject standard wordpress image data array (4 items)
+     * @param array $size array with width and height of the image that should be returned
+     */
 
     public function getResizedImageUrl($imageObject, $size = array(100, 100))
     {
