@@ -24,19 +24,31 @@ class Tiles extends \Modularity\Module
         return $data;
     }
 
+    /**
+     * Create tiles from db array
+     * @return array or null
+     */
     public function getTiles()
     {
-        if (!get_field('modularity-tiles', $this->ID)) {
-            return;
+        $return = array();
+
+        if ($tiles = get_field('modularity-tiles', $this->ID)) {
+            if (!is_array($tiles)) {
+                return null;
+            }
+
+            if (empty($tiles)) {
+                return null;
+            }
+
+            foreach ($tiles as $tile) {
+                $return[] = new \ModularityTiles\Tile($tile);
+            }
+
+            return $return;
         }
 
-        $tiles = array();
-
-        foreach (get_field('modularity-tiles', $this->ID) as $tile) {
-            $tiles[] = new \ModularityTiles\Tile($tile);
-        }
-
-        return $tiles;
+        return null;
     }
 
     public function template() : string
