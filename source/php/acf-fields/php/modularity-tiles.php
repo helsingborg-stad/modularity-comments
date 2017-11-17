@@ -2,17 +2,16 @@
 
 if (function_exists('acf_add_local_field_group')) {
     acf_add_local_field_group(array(
-    'key' => 'group_569ceab2c16ee',
+    'key' => 'group_59fc24ec4bb83',
     'title' => __('Tiles', 'modularity-testimonials'),
     'fields' => array(
         0 => array(
-            'key' => 'field_569ceabc2cfc8',
+            'key' => 'field_59fc24f6d3914',
             'label' => __('Tiles', 'modularity-testimonials'),
             'name' => 'modularity-tiles',
             'type' => 'repeater',
-            'value' => NULL,
             'instructions' => '',
-            'required' => 1,
+            'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
                 'width' => '',
@@ -23,16 +22,15 @@
             'min' => 1,
             'max' => 0,
             'layout' => 'block',
-            'button_label' => __('Lägg till rad', 'modularity-testimonials'),
+            'button_label' => '',
             'sub_fields' => array(
                 0 => array(
-                    'key' => 'field_5743f66719b62',
+                    'key' => 'field_59fc255bd3915',
                     'label' => __('Tile type', 'modularity-testimonials'),
                     'name' => 'link_type',
                     'type' => 'radio',
-                    'value' => NULL,
                     'instructions' => '',
-                    'required' => 1,
+                    'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
                         'width' => '',
@@ -52,13 +50,12 @@
                     'return_format' => 'value',
                 ),
                 1 => array(
-                    'key' => 'field_59f1929c9c179',
+                    'key' => 'field_59fc2587d3917',
                     'label' => __('Tile size', 'modularity-testimonials'),
                     'name' => 'tile_size',
                     'type' => 'radio',
-                    'value' => NULL,
                     'instructions' => '',
-                    'required' => 1,
+                    'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
                         'width' => '',
@@ -78,17 +75,16 @@
                     'return_format' => 'value',
                 ),
                 2 => array(
-                    'key' => 'field_569cf1252cfc9',
+                    'key' => 'field_59fc2599d3918',
                     'label' => __('Page', 'modularity-testimonials'),
                     'name' => 'page',
                     'type' => 'post_object',
-                    'value' => NULL,
                     'instructions' => '',
                     'required' => 1,
                     'conditional_logic' => array(
                         0 => array(
                             0 => array(
-                                'field' => 'field_5743f66719b62',
+                                'field' => 'field_59fc255bd3915',
                                 'operator' => '==',
                                 'value' => 'internal',
                             ),
@@ -109,17 +105,16 @@
                     'ui' => 1,
                 ),
                 3 => array(
-                    'key' => 'field_5743f6be19b63',
+                    'key' => 'field_59fc25b2d3919',
                     'label' => __('Link url', 'modularity-testimonials'),
                     'name' => 'link_url',
                     'type' => 'url',
-                    'value' => NULL,
                     'instructions' => '',
                     'required' => 1,
                     'conditional_logic' => array(
                         0 => array(
                             0 => array(
-                                'field' => 'field_5743f66719b62',
+                                'field' => 'field_59fc255bd3915',
                                 'operator' => '==',
                                 'value' => 'external',
                             ),
@@ -134,17 +129,16 @@
                     'placeholder' => '',
                 ),
                 4 => array(
-                    'key' => 'field_569e08cfb642a',
+                    'key' => 'field_59fc25d6d391a',
                     'label' => __('Upload image', 'modularity-testimonials'),
                     'name' => 'custom_image',
                     'type' => 'image',
-                    'value' => NULL,
                     'instructions' => '',
-                    'required' => 0,
+                    'required' => 1,
                     'conditional_logic' => array(
                         0 => array(
                             0 => array(
-                                'field' => 'field_5743f66719b62',
+                                'field' => 'field_59fc255bd3915',
                                 'operator' => '==',
                                 'value' => 'image',
                             ),
@@ -167,17 +161,16 @@
                     'mime_types' => '',
                 ),
                 5 => array(
-                    'key' => 'field_56c5e0edc81bb',
-                    'label' => __('Titel', 'modularity-testimonials'),
+                    'key' => 'field_59fc25fbd391b',
+                    'label' => __('Title', 'modularity-testimonials'),
                     'name' => 'title',
                     'type' => 'text',
-                    'value' => NULL,
                     'instructions' => __('Om du inte vill använda den underliggande sidans titel kan du skriva in en annan titel här.', 'modularity-testimonials'),
                     'required' => 0,
                     'conditional_logic' => array(
                         0 => array(
                             0 => array(
-                                'field' => 'field_5743f66719b62',
+                                'field' => 'field_59fc255bd3915',
                                 'operator' => '==',
                                 'value' => 'internal',
                             ),
@@ -189,25 +182,22 @@
                         'id' => '',
                     ),
                     'default_value' => '',
-                    'maxlength' => '',
                     'placeholder' => '',
                     'prepend' => '',
                     'append' => '',
-                    'readonly' => 0,
-                    'disabled' => 0,
+                    'maxlength' => '',
                 ),
                 6 => array(
-                    'key' => 'field_5743f6da19b64',
-                    'label' => __('Titel', 'modularity-testimonials'),
+                    'key' => 'field_59fc261dd391c',
+                    'label' => __('Title', 'modularity-testimonials'),
                     'name' => 'title',
                     'type' => 'text',
-                    'value' => NULL,
-                    'instructions' => '',
+                    'instructions' => __('Om du inte vill använda den underliggande sidans titel kan du skriva in en annan titel här.', 'modularity-testimonials'),
                     'required' => 1,
                     'conditional_logic' => array(
                         0 => array(
                             0 => array(
-                                'field' => 'field_5743f66719b62',
+                                'field' => 'field_59fc255bd3915',
                                 'operator' => '==',
                                 'value' => 'external',
                             ),
@@ -219,42 +209,39 @@
                         'id' => '',
                     ),
                     'default_value' => '',
-                    'maxlength' => '',
                     'placeholder' => '',
                     'prepend' => '',
                     'append' => '',
-                    'readonly' => 0,
-                    'disabled' => 0,
+                    'maxlength' => '',
                 ),
                 7 => array(
-                    'key' => 'field_56c5e12ac81bc',
+                    'key' => 'field_59fc2635d391d',
                     'label' => __('Lead', 'modularity-testimonials'),
                     'name' => 'lead',
                     'type' => 'textarea',
-                    'value' => NULL,
                     'instructions' => __('Om du inte vill använda den underliggande sidans ingress kan du skriva in en annan ingress här.', 'modularity-testimonials'),
                     'required' => 0,
                     'conditional_logic' => array(
                         0 => array(
                             0 => array(
-                                'field' => 'field_5743f66719b62',
+                                'field' => 'field_59fc255bd3915',
                                 'operator' => '==',
                                 'value' => 'internal',
                             ),
                             1 => array(
-                                'field' => 'field_59f1929c9c179',
+                                'field' => 'field_59fc2587d3917',
                                 'operator' => '!=',
                                 'value' => 'square',
                             ),
                         ),
                         1 => array(
                             0 => array(
-                                'field' => 'field_5743f66719b62',
+                                'field' => 'field_59fc255bd3915',
                                 'operator' => '==',
                                 'value' => 'external',
                             ),
                             1 => array(
-                                'field' => 'field_59f1929c9c179',
+                                'field' => 'field_59fc2587d3917',
                                 'operator' => '!=',
                                 'value' => 'square',
                             ),
