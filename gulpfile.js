@@ -12,7 +12,7 @@ var plumber = require('gulp-plumber');
 
 // Compile Our Sass
 gulp.task('sass-dist', function() {
-    gulp.src('source/sass/modularity-tiles.scss')
+    gulp.src(['source/sass/modularity-tiles.scss','source/sass/admin-modularity-tiles.scss'])
             .pipe(plumber())
             .pipe(sass())
             .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
@@ -22,7 +22,7 @@ gulp.task('sass-dist', function() {
 });
 
 gulp.task('sass-dev', function() {
-    gulp.src('source/sass/modularity-tiles.scss')
+    gulp.src(['source/sass/modularity-tiles.scss', 'source/sass/admin-modularity-tiles.scss'])
         .pipe(plumber())
         .pipe(sass())
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))

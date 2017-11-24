@@ -5,13 +5,23 @@
                 @if($tile->image)
                     <div class="{{$tile->grid}}">
                         <div class="{{$tile->tile}} tile-img" style="background-image: url('{{$tile->image}}');">
-                            <div>
-                                <div class="content">
-                                    @if($tile->title)
-                                        <h4>{{$tile->title}}</h4>
-                                    @endif
+                            @if($tile->url)
+                                <a href="{{$tile->url}}">
+                                    <div class="content">
+                                        @if($tile->title)
+                                            <h4>{{$tile->title}}</h4>
+                                        @endif
+                                    </div>
+                                </a>
+                            @else
+                                <div>
+                                    <div class="content">
+                                        @if($tile->title)
+                                            <h4>{{$tile->title}}</h4>
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
                         </div>
                     </div>
                 @else

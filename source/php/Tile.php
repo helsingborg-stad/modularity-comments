@@ -16,54 +16,60 @@ class Tile
 
     public $image;
 
-
     public function __construct($tile)
     {
-        $this->setSize($tile['tile_size']);
+        $this->tileSize($tile);
+        $this->tileContent($tile);
+        $this->stringifyClasses();
+    }
 
-        if ($tile['link_type'] !== 'image') {
-            $this->setTitle($tile);
-            $this->setUrl($tile);
-            $this->setContent($tile);
-        } else {
-            $this->setImage($tile);
-        }
-
-        //Convert class arrays to string
+    public function stringifyClasses()
+    {
         $this->grid = implode(' ', $this->grid);
         $this->tile = implode(' ', $this->tile);
     }
 
-    /**
-     * Get image that shouild been used and append class
-     * @return void
-     */
-
-    public function setImage($tile)
+    public function tileContent($tile)
     {
-        if ($tile['tile_size'] == 'horizontal') {
-            $this->image = $this->getResizedImageUrl($tile['custom_image'], array(854, 427));
-        } elseif ($tile['tile_size'] == 'vertical') {
-            $this->image = $this->getResizedImageUrl($tile['custom_image'], array(427, 854));
-        }
+        $avalibleTileContent = array(
+            'image' => [
+                'title' => false,
+                'content' => false,
+                'url' => true,
+                'image' => true
+            ],
+            'internal' => [
+                'title' => true,
+                'content' => true,
+                'url' => true,
+                'image' => false
+            ],
+            'external' => [
+                'title' => true,
+                'content' => true,
+                'url' => true,
+                'image' => false
+            ]
+        );
 
-        if (is_null($this->image)) {
-            $this->tile[] = 'tile-img';
-        }
-    }
+        foreach ($avalibleTileContent as $acfValue => $tileContent) {
+            if (isset($tile['link_type']) && $tile['link_type'] == $acfValue) {
+                if (isset($tileContent['title']) && $tileContent['title'] == true) {
+                    $this->setTitle($tile);
+                }
 
-    /**
-     * Set content sizes
-     * @return void
-     * @param $tile A tile object
-     */
+                if (isset($tileContent['content']) && $tileContent['content'] == true) {
+                    $this->setContent($tile);
+                }
 
-    public function setContent($tile)
-    {
-        if ($tile['tile_size'] == 'horizontal' || $tile['tile_size'] == 'vertical') {
-            $this->content = $tile['lead'];
-            $this->tile[] = 'invert';
-            $this->grid['xs'] = 'grid-xs-12';
+                if (isset($tileContent['url']) && $tileContent['url'] == true) {
+                    $this->setUrl($tile);
+                }
+
+                if (isset($tileContent['image']) && $tileContent['image'] == true) {
+                    $this->setImage($tile);
+                }
+            }
         }
     }
 
@@ -73,20 +79,48 @@ class Tile
      * @param $tile A tile object
      */
 
-    public function setSize($size)
+    public function tileSize($tile)
     {
-        $this->tile[] = 'tile';
-        if ($size == 'square') {
-            $this->grid['xs'] = 'grid-xs-6';
-            $this->grid['lg'] = 'grid-lg-4';
-        } elseif ($size == 'horizontal') {
-            $this->grid['xs'] = 'grid-xs-12';
-            $this->grid['lg'] = 'grid-lg-8';
-            $this->tile[] = 'tile-h';
-        } elseif ($size == 'vertical') {
-            $this->grid['xs'] = 'grid-xs-6';
-            $this->grid['lg'] = 'grid-lg-4';
-            $this->tile[] = 'tile-v';
+        $avalibleTiles = array(
+            'tile_size' => array(
+                'square' => [
+                    'grid' => 'grid-lg-4',
+                    'tile' => 'tile'
+                ],
+                'horizontal' =>  [
+                    'grid' => 'grid-lg-8',
+                    'tile' => 'tile tile--lg-horizontal'
+                ],
+                'vertical' =>  [
+                    'grid' => 'grid-lg-4',
+                    'tile' => 'tile tile--lg-vertical'
+                ],
+            ),
+            'tile_size_mobile' => array(
+                'square' => [
+                    'grid' => 'grid-xs-6',
+                    'tile' => ''
+                ],
+                'square2x' => [
+                    'grid' => 'grid-xs-12',
+                    'tile' => 'tile--sm-horizontal'
+                ],
+                'horizontal' =>  [
+                    'grid' => 'grid-xs-12',
+                    'tile' => 'tile--xs-horizontal'
+                ],
+                'vertical' =>  [
+                    'grid' => 'grid-xs-6',
+                    'tile' => 'tile--xs-vertical'
+                ],
+            )
+        );
+
+        foreach ($avalibleTiles as $fieldName => $fieldValue) {
+            if (isset($tile[$fieldName])) {
+                $this->grid[] = $fieldValue[$tile[$fieldName]]['grid'];
+                $this->tile[] = $fieldValue[$tile[$fieldName]]['tile'];
+            }
         }
     }
 
@@ -98,10 +132,37 @@ class Tile
 
     public function setUrl($tile)
     {
-        if ($tile['link_type'] == 'internal') {
-            $this->url = get_permalink($tile['page']->ID);
-        } else {
-            $this->url = $tile['link_url'];
+        switch ($tile['link_type']) {
+            case 'internal':
+                $this->url = get_permalink($tile['page']->ID);
+                break;
+            case 'external':
+                $this->url = $tile['link_url'];
+                break;
+            case 'image':
+                if (isset($tile['link_options']) && $tile['link_options'] == 'internal') {
+                    $this->url = get_permalink($tile['page']->ID);
+                } elseif (isset($tile['link_options']) && $tile['link_options'] == 'external') {
+                    $this->url = $tile['link_url'];
+                }
+                break;
+        }
+    }
+
+
+
+    /**
+     * Get image that shouild been used and append class
+     * @return void
+     */
+
+    public function setImage($tile)
+    {
+
+        if ($tile['tile_size'] == 'horizontal') {
+            $this->image = $this->getResizedImageUrl($tile['custom_image'], array(854, 427));
+        } elseif ($tile['tile_size'] == 'vertical') {
+            $this->image = $this->getResizedImageUrl($tile['custom_image'], array(427, 854));
         }
     }
 
@@ -113,11 +174,31 @@ class Tile
 
     public function setTitle($tile)
     {
-        if ($tile['link_type'] == 'internal' && !$tile['title']) {
+        if (isset($tile['page']) && $tile['page'] && !$tile['title']) {
             $this->title = $tile['page']->post_title;
         } else {
             $this->title = $tile['title'];
         }
+    }
+
+    /**
+     * Set content sizes
+     * @return void
+     * @param $tile A tile object
+     */
+
+    public function setContent($tile)
+    {
+        if (!isset($tile['tile_content']) || $tile['tile_content'] == false) {
+            return;
+        }
+
+        if (isset($tile['lead']) && $tile['lead']) {
+            $this->content = $tile['lead'];
+        } elseif (isset($tile['page']->excerpt) && $tile['page']->excerpt) {
+             $this->content = $tile['page']->excerpt;
+        }
+        $this->tile[] = 'invert';
     }
 
     /**

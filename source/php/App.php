@@ -16,7 +16,7 @@ class App
      */
     public function enqueueStyles()
     {
-
+        wp_enqueue_style('modularity-tiles-admin-styles', MODULARITYTILES_URL . '/dist/css/admin-modularity-tiles.dev.css');
     }
 
     /**
@@ -25,6 +25,5 @@ class App
      */
     public function enqueueScripts()
     {
-
     }
 }

@@ -10,6 +10,7 @@
             'label' => __('Tiles', 'modularity-testimonials'),
             'name' => 'modularity-tiles',
             'type' => 'repeater',
+            'value' => NULL,
             'instructions' => '',
             'required' => 0,
             'conditional_logic' => 0,
@@ -29,6 +30,7 @@
                     'label' => __('Tile type', 'modularity-testimonials'),
                     'name' => 'link_type',
                     'type' => 'radio',
+                    'value' => NULL,
                     'instructions' => '',
                     'required' => 0,
                     'conditional_logic' => 0,
@@ -40,7 +42,7 @@
                     'choices' => array(
                         'internal' => __('Internal link', 'modularity-testimonials'),
                         'external' => __('External link', 'modularity-testimonials'),
-                        'image' => __('Image (no link)', 'modularity-testimonials'),
+                        'image' => __('Image', 'modularity-testimonials'),
                     ),
                     'allow_null' => 0,
                     'other_choice' => 0,
@@ -50,13 +52,50 @@
                     'return_format' => 'value',
                 ),
                 1 => array(
+                    'key' => 'field_5a181bef5b544',
+                    'label' => __('Display content', 'modularity-testimonials'),
+                    'name' => 'tile_content',
+                    'type' => 'true_false',
+                    'value' => NULL,
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => array(
+                        0 => array(
+                            0 => array(
+                                'field' => 'field_59fc255bd3915',
+                                'operator' => '!=',
+                                'value' => 'image',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'message' => '',
+                    'default_value' => 0,
+                    'ui' => 0,
+                    'ui_on_text' => '',
+                    'ui_off_text' => '',
+                ),
+                2 => array(
                     'key' => 'field_59fc2587d3917',
                     'label' => __('Tile size', 'modularity-testimonials'),
                     'name' => 'tile_size',
                     'type' => 'radio',
+                    'value' => NULL,
                     'instructions' => '',
                     'required' => 0,
-                    'conditional_logic' => 0,
+                    'conditional_logic' => array(
+                        0 => array(
+                            0 => array(
+                                'field' => 'field_5a181bef5b544',
+                                'operator' => '!=',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
                     'wrapper' => array(
                         'width' => '',
                         'class' => '',
@@ -74,17 +113,166 @@
                     'layout' => 'horizontal',
                     'return_format' => 'value',
                 ),
-                2 => array(
+                3 => array(
+                    'key' => 'field_5a181c205b545',
+                    'label' => __('Tile size', 'modularity-testimonials'),
+                    'name' => 'tile_size',
+                    'type' => 'radio',
+                    'value' => NULL,
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => array(
+                        0 => array(
+                            0 => array(
+                                'field' => 'field_5a181bef5b544',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'choices' => array(
+                        'horizontal' => __('Horizontal Rectangle (1:2)', 'modularity-testimonials'),
+                        'vertical' => __('Vertical Rectangle (2:1)', 'modularity-testimonials'),
+                    ),
+                    'allow_null' => 0,
+                    'other_choice' => 0,
+                    'save_other_choice' => 0,
+                    'default_value' => '',
+                    'layout' => 'horizontal',
+                    'return_format' => 'value',
+                ),
+                4 => array(
+                    'key' => 'field_5a003ea0d3ee2',
+                    'label' => __('Tile size mobile', 'modularity-testimonials'),
+                    'name' => 'tile_size_mobile',
+                    'type' => 'radio',
+                    'value' => NULL,
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => array(
+                        0 => array(
+                            0 => array(
+                                'field' => 'field_5a181bef5b544',
+                                'operator' => '!=',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'choices' => array(
+                        'square' => __('Square (1:1)', 'modularity-testimonials'),
+                        'horizontal' => __('Horizontal Rectangle (1:2)', 'modularity-testimonials'),
+                        'vertical' => __('Vertical Rectangle (2:1)', 'modularity-testimonials'),
+                        'square2x' => __('Square 2x (2:2)', 'modularity-testimonials'),
+                    ),
+                    'allow_null' => 0,
+                    'other_choice' => 0,
+                    'save_other_choice' => 0,
+                    'default_value' => '',
+                    'layout' => 'horizontal',
+                    'return_format' => 'value',
+                ),
+                5 => array(
+                    'key' => 'field_5a181c2f5b546',
+                    'label' => __('Tile size mobile', 'modularity-testimonials'),
+                    'name' => 'tile_size_mobile',
+                    'type' => 'radio',
+                    'value' => NULL,
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => array(
+                        0 => array(
+                            0 => array(
+                                'field' => 'field_5a181bef5b544',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'choices' => array(
+                        'square2x' => __('Square 2x (2:2)', 'modularity-testimonials'),
+                    ),
+                    'allow_null' => 0,
+                    'other_choice' => 0,
+                    'save_other_choice' => 0,
+                    'default_value' => '',
+                    'layout' => 'horizontal',
+                    'return_format' => 'value',
+                ),
+                6 => array(
+                    'key' => 'field_5a18113d1ea16',
+                    'label' => __('Link options', 'modularity-testimonials'),
+                    'name' => 'link_options',
+                    'type' => 'radio',
+                    'value' => NULL,
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => array(
+                        0 => array(
+                            0 => array(
+                                'field' => 'field_59fc255bd3915',
+                                'operator' => '==',
+                                'value' => 'image',
+                            ),
+                        ),
+                        1 => array(
+                            0 => array(
+                                'field' => 'field_59fc255bd3915',
+                                'operator' => '==',
+                                'value' => 'internal',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'choices' => array(
+                        'none' => __('No link', 'modularity-testimonials'),
+                        'internal' => __('Internal link', 'modularity-testimonials'),
+                        'external' => __('External link', 'modularity-testimonials'),
+                    ),
+                    'allow_null' => 0,
+                    'other_choice' => 0,
+                    'save_other_choice' => 0,
+                    'default_value' => '',
+                    'layout' => 'horizontal',
+                    'return_format' => 'value',
+                ),
+                7 => array(
                     'key' => 'field_59fc2599d3918',
-                    'label' => __('Page', 'modularity-testimonials'),
+                    'label' => __('Internal URL', 'modularity-testimonials'),
                     'name' => 'page',
                     'type' => 'post_object',
+                    'value' => NULL,
                     'instructions' => '',
                     'required' => 1,
                     'conditional_logic' => array(
                         0 => array(
                             0 => array(
                                 'field' => 'field_59fc255bd3915',
+                                'operator' => '==',
+                                'value' => 'internal',
+                            ),
+                        ),
+                        1 => array(
+                            0 => array(
+                                'field' => 'field_5a18113d1ea16',
                                 'operator' => '==',
                                 'value' => 'internal',
                             ),
@@ -104,17 +292,25 @@
                     'return_format' => 'object',
                     'ui' => 1,
                 ),
-                3 => array(
+                8 => array(
                     'key' => 'field_59fc25b2d3919',
-                    'label' => __('Link url', 'modularity-testimonials'),
+                    'label' => __('External URL', 'modularity-testimonials'),
                     'name' => 'link_url',
                     'type' => 'url',
+                    'value' => NULL,
                     'instructions' => '',
                     'required' => 1,
                     'conditional_logic' => array(
                         0 => array(
                             0 => array(
                                 'field' => 'field_59fc255bd3915',
+                                'operator' => '==',
+                                'value' => 'external',
+                            ),
+                        ),
+                        1 => array(
+                            0 => array(
+                                'field' => 'field_5a18113d1ea16',
                                 'operator' => '==',
                                 'value' => 'external',
                             ),
@@ -128,11 +324,146 @@
                     'default_value' => '',
                     'placeholder' => '',
                 ),
-                4 => array(
+                9 => array(
+                    'key' => 'field_59fc261dd391c',
+                    'label' => __('Title', 'modularity-testimonials'),
+                    'name' => 'title',
+                    'type' => 'text',
+                    'value' => NULL,
+                    'instructions' => __('Om du inte vill använda den underliggande sidans titel kan du skriva in en annan titel här.', 'modularity-testimonials'),
+                    'required' => 1,
+                    'conditional_logic' => array(
+                        0 => array(
+                            0 => array(
+                                'field' => 'field_59fc255bd3915',
+                                'operator' => '==',
+                                'value' => 'external',
+                            ),
+                        ),
+                        1 => array(
+                            0 => array(
+                                'field' => 'field_59fc255bd3915',
+                                'operator' => '==',
+                                'value' => 'content',
+                            ),
+                            1 => array(
+                                'field' => 'field_5a18113d1ea16',
+                                'operator' => '!=',
+                                'value' => 'internal',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                10 => array(
+                    'key' => 'field_59fc25fbd391b',
+                    'label' => __('Title', 'modularity-testimonials'),
+                    'name' => 'title',
+                    'type' => 'text',
+                    'value' => NULL,
+                    'instructions' => __('Om du inte vill använda den underliggande sidans titel kan du skriva in en annan titel här.', 'modularity-testimonials'),
+                    'required' => 0,
+                    'conditional_logic' => array(
+                        0 => array(
+                            0 => array(
+                                'field' => 'field_59fc255bd3915',
+                                'operator' => '==',
+                                'value' => 'internal',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                11 => array(
+                    'key' => 'field_59fc2635d391d',
+                    'label' => __('Content', 'modularity-testimonials'),
+                    'name' => 'lead',
+                    'type' => 'textarea',
+                    'value' => NULL,
+                    'instructions' => __('Om du inte vill använda den underliggande sidans ingress kan du skriva in en annan ingress här.', 'modularity-testimonials'),
+                    'required' => 0,
+                    'conditional_logic' => array(
+                        0 => array(
+                            0 => array(
+                                'field' => 'field_59fc255bd3915',
+                                'operator' => '==',
+                                'value' => 'internal',
+                            ),
+                            1 => array(
+                                'field' => 'field_5a181bef5b544',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'maxlength' => '',
+                    'rows' => '',
+                    'new_lines' => '',
+                ),
+                12 => array(
+                    'key' => 'field_5a181c9a6451c',
+                    'label' => __('Content', 'modularity-testimonials'),
+                    'name' => 'lead',
+                    'type' => 'textarea',
+                    'value' => NULL,
+                    'instructions' => __('Om du inte vill använda den underliggande sidans ingress kan du skriva in en annan ingress här.', 'modularity-testimonials'),
+                    'required' => 1,
+                    'conditional_logic' => array(
+                        0 => array(
+                            0 => array(
+                                'field' => 'field_59fc255bd3915',
+                                'operator' => '==',
+                                'value' => 'external',
+                            ),
+                            1 => array(
+                                'field' => 'field_5a181bef5b544',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'maxlength' => '',
+                    'rows' => '',
+                    'new_lines' => '',
+                ),
+                13 => array(
                     'key' => 'field_59fc25d6d391a',
                     'label' => __('Upload image', 'modularity-testimonials'),
                     'name' => 'custom_image',
                     'type' => 'image',
+                    'value' => NULL,
                     'instructions' => '',
                     'required' => 1,
                     'conditional_logic' => array(
@@ -160,105 +491,27 @@
                     'max_size' => '',
                     'mime_types' => '',
                 ),
-                5 => array(
-                    'key' => 'field_59fc25fbd391b',
-                    'label' => __('Title', 'modularity-testimonials'),
-                    'name' => 'title',
-                    'type' => 'text',
-                    'instructions' => __('Om du inte vill använda den underliggande sidans titel kan du skriva in en annan titel här.', 'modularity-testimonials'),
-                    'required' => 0,
-                    'conditional_logic' => array(
-                        0 => array(
-                            0 => array(
-                                'field' => 'field_59fc255bd3915',
-                                'operator' => '==',
-                                'value' => 'internal',
-                            ),
-                        ),
-                    ),
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'default_value' => '',
-                    'placeholder' => '',
-                    'prepend' => '',
-                    'append' => '',
-                    'maxlength' => '',
-                ),
-                6 => array(
-                    'key' => 'field_59fc261dd391c',
-                    'label' => __('Title', 'modularity-testimonials'),
-                    'name' => 'title',
-                    'type' => 'text',
-                    'instructions' => __('Om du inte vill använda den underliggande sidans titel kan du skriva in en annan titel här.', 'modularity-testimonials'),
-                    'required' => 1,
-                    'conditional_logic' => array(
-                        0 => array(
-                            0 => array(
-                                'field' => 'field_59fc255bd3915',
-                                'operator' => '==',
-                                'value' => 'external',
-                            ),
-                        ),
-                    ),
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'default_value' => '',
-                    'placeholder' => '',
-                    'prepend' => '',
-                    'append' => '',
-                    'maxlength' => '',
-                ),
-                7 => array(
-                    'key' => 'field_59fc2635d391d',
-                    'label' => __('Lead', 'modularity-testimonials'),
-                    'name' => 'lead',
-                    'type' => 'textarea',
-                    'instructions' => __('Om du inte vill använda den underliggande sidans ingress kan du skriva in en annan ingress här.', 'modularity-testimonials'),
-                    'required' => 0,
-                    'conditional_logic' => array(
-                        0 => array(
-                            0 => array(
-                                'field' => 'field_59fc255bd3915',
-                                'operator' => '==',
-                                'value' => 'internal',
-                            ),
-                            1 => array(
-                                'field' => 'field_59fc2587d3917',
-                                'operator' => '!=',
-                                'value' => 'square',
-                            ),
-                        ),
-                        1 => array(
-                            0 => array(
-                                'field' => 'field_59fc255bd3915',
-                                'operator' => '==',
-                                'value' => 'external',
-                            ),
-                            1 => array(
-                                'field' => 'field_59fc2587d3917',
-                                'operator' => '!=',
-                                'value' => 'square',
-                            ),
-                        ),
-                    ),
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'default_value' => '',
-                    'placeholder' => '',
-                    'maxlength' => '',
-                    'rows' => '',
-                    'new_lines' => '',
-                ),
             ),
+        ),
+        1 => array(
+            'key' => 'field_5a17fe9535826',
+            'label' => __('Offset grid', 'modularity-testimonials'),
+            'name' => 'modularity-tiles-offset',
+            'type' => 'true_false',
+            'value' => NULL,
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => 0,
+            'message' => '',
+            'ui' => 0,
+            'ui_on_text' => '',
+            'ui_off_text' => '',
         ),
     ),
     'location' => array(
