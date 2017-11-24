@@ -103,8 +103,8 @@
                     ),
                     'choices' => array(
                         'square' => __('Square (1:1)', 'modularity-testimonials'),
-                        'horizontal' => __('Horizontal Rectangle (1:2)', 'modularity-testimonials'),
-                        'vertical' => __('Vertical Rectangle (2:1)', 'modularity-testimonials'),
+                        'horizontal' => __('Horizontal (1:2)', 'modularity-testimonials'),
+                        'vertical' => __('Vertical (2:1)', 'modularity-testimonials'),
                     ),
                     'allow_null' => 0,
                     'other_choice' => 0,
@@ -136,8 +136,8 @@
                         'id' => '',
                     ),
                     'choices' => array(
-                        'horizontal' => __('Horizontal Rectangle (1:2)', 'modularity-testimonials'),
-                        'vertical' => __('Vertical Rectangle (2:1)', 'modularity-testimonials'),
+                        'horizontal' => __('Horizontal (1:2)', 'modularity-testimonials'),
+                        'vertical' => __('Vertical (2:1)', 'modularity-testimonials'),
                     ),
                     'allow_null' => 0,
                     'other_choice' => 0,
@@ -170,8 +170,8 @@
                     ),
                     'choices' => array(
                         'square' => __('Square (1:1)', 'modularity-testimonials'),
-                        'horizontal' => __('Horizontal Rectangle (1:2)', 'modularity-testimonials'),
-                        'vertical' => __('Vertical Rectangle (2:1)', 'modularity-testimonials'),
+                        'horizontal' => __('Horizontal (1:2)', 'modularity-testimonials'),
+                        'vertical' => __('Vertical (2:1)', 'modularity-testimonials'),
                         'square2x' => __('Square 2x (2:2)', 'modularity-testimonials'),
                     ),
                     'allow_null' => 0,

@@ -100,8 +100,8 @@
                     },
                     "choices": {
                         "square": "Square (1:1)",
-                        "horizontal": "Horizontal Rectangle (1:2)",
-                        "vertical": "Vertical Rectangle (2:1)"
+                        "horizontal": "Horizontal (1:2)",
+                        "vertical": "Vertical (2:1)"
                     },
                     "allow_null": 0,
                     "other_choice": 0,
@@ -133,8 +133,8 @@
                         "id": ""
                     },
                     "choices": {
-                        "horizontal": "Horizontal Rectangle (1:2)",
-                        "vertical": "Vertical Rectangle (2:1)"
+                        "horizontal": "Horizontal (1:2)",
+                        "vertical": "Vertical (2:1)"
                     },
                     "allow_null": 0,
                     "other_choice": 0,
@@ -167,8 +167,8 @@
                     },
                     "choices": {
                         "square": "Square (1:1)",
-                        "horizontal": "Horizontal Rectangle (1:2)",
-                        "vertical": "Vertical Rectangle (2:1)",
+                        "horizontal": "Horizontal (1:2)",
+                        "vertical": "Vertical (2:1)",
                         "square2x": "Square 2x (2:2)"
                     },
                     "allow_null": 0,
