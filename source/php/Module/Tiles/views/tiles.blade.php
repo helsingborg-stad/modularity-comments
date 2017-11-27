@@ -1,4 +1,4 @@
-<section class="section-tiles">
+<section id="{{ $sectionID }}" class="section-tiles">
     <div class="container container-fullwidth">
         <div class="tile-grid grid no-gutter" data-packery='{ "itemSelector": ".tile-grid > *", "percentPosition": true, "transitionDuration": 500, "gutter" : 0 }'>
             @foreach ($tiles as $tile)

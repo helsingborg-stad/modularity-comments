@@ -20,6 +20,9 @@ class Tiles extends \Modularity\Module
 
         $data['tiles'] = $this->getTiles();
 
+        //Generate a section id
+        $data['sectionID'] = sanitize_title($this->module->post_title);
+
         //Send to view
         return $data;
     }
