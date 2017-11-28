@@ -158,11 +158,12 @@ class Tile
 
     public function setImage($tile)
     {
-
         if ($tile['tile_size'] == 'horizontal') {
             $this->image = $this->getResizedImageUrl($tile['custom_image'], array(854, 427));
         } elseif ($tile['tile_size'] == 'vertical') {
             $this->image = $this->getResizedImageUrl($tile['custom_image'], array(427, 854));
+        } elseif ($tile['tile_size'] == 'square') {
+            $this->image = $this->getResizedImageUrl($tile['custom_image'], array(427, 427));
         }
     }
 
