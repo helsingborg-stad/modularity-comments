@@ -28,14 +28,16 @@
                     <div class="{{$tile->grid}}">
                         <div class="{{$tile->tile}}">
                             <a href="{{$tile->url}}">
-                                <div class="content">
-                                    @if($tile->title)
-                                        <h4>{{$tile->title}}</h4>
-                                    @endif
-                                    @if($tile->content)
-                                        <p>{{$tile->content}}</p>
-                                    @endif
-                                </div>
+                                @if($tile->title || $tile->content)
+                                    <div class="content">
+                                        @if($tile->title)
+                                            <h4>{{$tile->title}}</h4>
+                                        @endif
+                                        @if($tile->content)
+                                            <p>{{$tile->content}}</p>
+                                        @endif
+                                    </div>
+                                @endif
                             </a>
                         </div>
                     </div>
