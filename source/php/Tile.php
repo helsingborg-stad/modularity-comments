@@ -82,36 +82,36 @@ class Tile
     public function tileSize($tile)
     {
         $avalibleTiles = array(
-            'tile_size' => array(
-                'square' => [
-                    'grid' => 'grid-lg-4',
-                    'tile' => 'tile'
-                ],
-                'horizontal' =>  [
-                    'grid' => 'grid-lg-8',
-                    'tile' => 'tile tile--lg-horizontal'
-                ],
-                'vertical' =>  [
-                    'grid' => 'grid-lg-4',
-                    'tile' => 'tile tile--lg-vertical'
-                ],
-            ),
             'tile_size_mobile' => array(
                 'square' => [
                     'grid' => 'grid-xs-6',
-                    'tile' => ''
+                    'tile' => 'u-square@xs'
                 ],
                 'square2x' => [
                     'grid' => 'grid-xs-12',
-                    'tile' => 'tile--sm-horizontal'
+                    'tile' => 'u-square@xs'
                 ],
                 'horizontal' =>  [
                     'grid' => 'grid-xs-12',
-                    'tile' => 'tile--xs-horizontal'
+                    'tile' => 'u-horizontal-rectangle@xs'
                 ],
                 'vertical' =>  [
                     'grid' => 'grid-xs-6',
-                    'tile' => 'tile--xs-vertical'
+                    'tile' => 'u-vertical-rectangle@xs'
+                ],
+            ),
+            'tile_size' => array(
+                'square' => [
+                    'grid' => 'grid-lg-4',
+                    'tile' => 'u-square@lg'
+                ],
+                'horizontal' =>  [
+                    'grid' => 'grid-lg-8',
+                    'tile' => 'u-horizontal-rectangle@lg'
+                ],
+                'vertical' =>  [
+                    'grid' => 'grid-lg-4',
+                    'tile' => 'u-vertical-rectangle@lg'
                 ],
             )
         );
@@ -199,7 +199,7 @@ class Tile
         } elseif (isset($tile['page']->excerpt) && $tile['page']->excerpt) {
              $this->content = $tile['page']->excerpt;
         }
-        $this->tile[] = 'invert';
+        $this->tile[] = 'c-tiles__tile--invert';
     }
 
     /**
