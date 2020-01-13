@@ -1,3 +1,3 @@
-# Modularity Tiles
+# Modularity Comments
 
-(#plugin_description#)
+A module built to show most recent comments.
