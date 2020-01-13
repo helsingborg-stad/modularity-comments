@@ -1,6 +1,6 @@
 <?php
 
-namespace ModularityTiles\Vendor;
+namespace ModularityComments\Vendor;
 
 /**
  * A PSR-4 compatible class loader.

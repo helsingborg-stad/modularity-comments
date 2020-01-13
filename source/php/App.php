@@ -1,13 +1,13 @@
 <?php
 
-namespace ModularityTiles;
+namespace ModularityComments;
 
 class App
 {
     public function __construct()
     {
-        add_action('admin_enqueue_scripts', array($this, 'enqueueStyles'));
-        add_action('admin_enqueue_scripts', array($this, 'enqueueScripts'));
+        add_action('wp_enqueue_scripts', array($this, 'enqueueStyles'));
+        add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
     }
 
     /**
@@ -16,7 +16,7 @@ class App
      */
     public function enqueueStyles()
     {
-        wp_enqueue_style('modularity-tiles-admin-styles', MODULARITYTILES_URL . '/dist/css/admin-modularity-tiles.dev.css');
+        wp_enqueue_style('modularity-comments', MODULARITYCOMMENTS_URL . '/dist/css/modularity-comments.dev.css');
     }
 
     /**
