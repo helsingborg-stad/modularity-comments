@@ -8,6 +8,14 @@ class App
     {
         add_action('wp_enqueue_scripts', array($this, 'enqueueStyles'));
         add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
+
+        add_filter('acf/load_field/name=comments_from_post_type', array($this, 'acf_populate_select_options'));
+    }
+
+    public function acf_populate_select_options($field)
+    {
+        $field['choices'] = get_post_types();
+        return $field;
     }
 
     /**
