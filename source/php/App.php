@@ -15,6 +15,7 @@ class App
     public function acf_populate_select_options($field)
     {
         $field['choices'] = get_post_types();
+        array_unshift($field['choices'], 'any');
         return $field;
     }
 
