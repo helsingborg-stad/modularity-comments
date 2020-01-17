@@ -23,7 +23,6 @@ define('MODULARITYCOMMENTS_URL', plugins_url('', __FILE__));
 define('MODULARITYCOMMENTS_TEMPLATE_PATH', MODULARITYCOMMENTS_PATH . 'templates/');
 define('MODULARITYCOMMENTS_MODULE_PATH', MODULARITYCOMMENTS_PATH . 'source/php/Module');
 
-
 load_plugin_textdomain('modularity-comments', false, plugin_basename(dirname(__FILE__)) . '/languages');
 
 require_once MODULARITYCOMMENTS_PATH . 'source/php/Vendor/Psr4ClassLoader.php';

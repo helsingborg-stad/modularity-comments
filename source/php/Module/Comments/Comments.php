@@ -18,9 +18,8 @@ class Comments extends \Modularity\Module
     {
         $data = array();
 
-        // $data['post_title'] = $this->post_title;
-
         $data['comments'] = $this->getComments();
+        $data['wordCount'] = 35;
 
         //Send to view
         return $data;
@@ -33,7 +32,8 @@ class Comments extends \Modularity\Module
     public function getComments()
     {
         $amount = get_field('number_of_comments', $this->ID);
-        return get_comments(array('number' => $amount, 'post_type' => 'protocol'));
+        $postType = get_field('comments_from_post_type', $this->ID);
+        return get_comments(array('number' => $amount, 'post_type' => $postType));
     }
 
     public function template() : string
