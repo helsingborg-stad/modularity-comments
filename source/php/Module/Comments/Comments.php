@@ -19,6 +19,7 @@ class Comments extends \Modularity\Module
         $data = array();
 
         $data['comments'] = $this->getComments();
+        $data['wordCount'] = 35;
 
         //Send to view
         return $data;

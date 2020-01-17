@@ -2,7 +2,7 @@
 <section class="start-page-section section-comments">
     <div class="container">
         <div class="grid grid--columns" data-equal-container>
-            @if(count($comments) > 0)
+            @if(!empty($comments))
                 @foreach($comments as $comment)
                     <div class="u-flex grid-xs-12 grid-sm-12 grid-md-6 grid-lg-6">
                         <a href="{{ get_comment_link($comment->comment_ID) }}" class="comment-card">
@@ -23,7 +23,7 @@
                                     </time>
                                 </div>
                                 <p class="card-comment-content">
-                                    {{ substr($comment->comment_content, 0, 240) . '...' }}
+                                    {{ wp_trim_words($comment->comment_content, $wordCount, '...') }}
                                 </p>
                             </div>
                         </a>
